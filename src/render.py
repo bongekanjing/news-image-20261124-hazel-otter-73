@@ -149,23 +149,17 @@ TILES = [
 ]
 
 BRIEFS = [
-    ("Americas", "Washington", "Advocacy groups sue over a removed slavery exhibit"),
     ("Europe", "Brussels", "The Commission wants the COP process reformed"),
-    ("Europe", "Brussels", "A 50m euro Black Sea maritime security hub is planned"),
     ("Europe", "Antalya", "Eighty to ninety states objected to the COP31 text"),
     ("Europe", "Brussels", "Sixty Russian banks face removal from SWIFT"),
     ("MidEast", "Hormuz", "Three tankers burned after reported mine hits"),
     ("MidEast", "Tehran", "Hatami: any new US action draws a wider answer"),
     ("MidEast", "Tel Aviv", "Huckabee spoke at the INSS conference"),
-    ("Asia", "Port Louis", "Mauritius withdrew the flight permissions in April"),
     ("Asia", "Taipei", "Lai's flight was barred from two airspaces"),
     ("Asia", "Seoul", "Korea and China widen a trade deal on content"),
-    ("Asia", "Dhaka", "Talks drag on over the new RMG wage"),
     ("Africa", "Congo", "No licensed shot exists for the Bundibugyo strain"),
-    ("Africa", "Accra", "West Africa's gold refining outruns its mines"),
     ("Africa", "Conakry", "Miners stockpile gold as local rules bite"),
     ("World", "Geneva", "Sindarov won the World Cup and the Candidates"),
-    ("World", "Cologny", "Fourteen games; the first to 7.5 wins"),
     ("World", "Kamchatka", "A false M9.9 alert followed an M7 quake"),
     ("World", "Zurich", "FIFA names the 2031 and 2035 World Cup hosts"),
     ("World", "Addis Ababa", "Africa CDC hosts the vaccine financing talks"),
@@ -1021,7 +1015,7 @@ def build(out_path: str) -> None:
 
     # Pick the largest type size the rail holds, then the column count for it:
     # a thumbnail is read before any word, so size wins over column count.
-    for size in range(9, 5, -1):
+    for size in range(12, 5, -1):
         bfont = F("sans_cb", size)
         lead = size + 3
         for ncol in (3, 4, 2, 5):
