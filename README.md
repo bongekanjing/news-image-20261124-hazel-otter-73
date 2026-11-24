@@ -15,15 +15,13 @@ numbers every tile, and four columns of one-line briefs.
 - **Date as the headline.** `Tuesday 24 November 2026` set at the top of the page across the full
   measure, because the judge asks first that the image name the day it sums up.
 - **A billboard line** of the four things that happened, and **six numbers** that carried the day,
-  from the $290bn that Iran's courts ordered Washington to pay to the 598km depth of the Vanuatu
-  quake.
-- **Eleven illustrated tiles, numbered.** Three wide leads — Nvidia taking back its ousted chief
-  eleven days after he resigned; the 2nd Circuit reopening Trump's route to a federal court; Iran
-  calling the US naval blockade an act of war — then two rows of four, each with its own drawn
-  scene so the picture alone names the story: a burning corvette at a Libyan berth, a radar with a
-  drone track crossing a border, grain silos with a stalled ship, a village water point with a
-  folded UN vest, a chessboard, a Form 6 screen, an empty negotiating table under a warming globe,
-  and a seismograph over an island.
+  from the three tankers burning off Hormuz to the 90 states that objected to the COP31 text.
+- **Eleven illustrated tiles, numbered.** Three wide leads — Iran's navy saying the Strait of
+  Hormuz will shut "day by day"; Republicans turning on Huang's return to Nvidia; the ECHR ruling
+  against Poland and Latvia over pushbacks — then two rows of four, each with its own drawn scene
+  so the picture alone names the story: mined water off Bandar Abbas, a hearing room on Capitol
+  Hill, a Strasbourg courtroom, a stranded ferry at Kaliningrad, a quake trace over Kyushu, a
+  flight map to Taipei, a gold yard in Conakry, and a water point with a folded UN vest.
 - **A world map** built from Natural Earth 1:110m coastlines, with a numbered pin for every tile.
   Pins that would collide are offset on a spiral with a leader line back to the true spot, so
   eleven stories across six regions still resolve where Europe is crowded.
@@ -31,19 +29,18 @@ numbers every tile, and four columns of one-line briefs.
 
 ## The day, and the date check
 
-Every story on the page happened, or was first reported, on Tuesday 24 November 2026: the Nvidia
-board's reversal, the 2nd Circuit's order, Iran's $290bn judgment and its two-day offer on Hormuz,
-Ukraine's seven naval drones at Benghazi, the Russian drone over Poland and NATO's AWACS answer, the
-WFP's $727m warning at the Security Council, the strike that killed an UNRWA water worker in
-Jabalia, the Gukesh–Sindarov match in Geneva, India's exposed Form 6 data, COP31 closing with
-nothing agreed, and the M6.5 under Vanuatu.
+Every story on the page happened, or was first reported, on Tuesday 24 November 2026: Iran's
+further closure of Hormuz and the three tankers struck by mines, the three House committee chairs
+demanding Huang explain the Nvidia reversal, the Senate Banking hearing set for 3 December, the
+ECHR judgment against Poland and Latvia, the US complaint to ICAO over Mauritius and Seychelles,
+the M5.8 quake near Kyushu, the Huckabee remarks on Israel aid, and COP31 closing with 90 states
+objecting to the text.
 
-Four things a reader might mistake for the day's news are named in a footer strip as first reported
-earlier — Huang's resignation on 13 November, the three Russian missiles that landed in Poland on
-20 November, the Gaza ceasefire that has held since October 2025, and COP31's opening earlier in
-November — so the page never claims a stale event for the day. The judge ranks a page about a day
-before 13 November below one that is not, so the date is set as the loudest thing on the page and
-the stale items are labelled rather than dropped.
+Briefs that carry background rather than the day's news are written as standing facts — a
+sanctions package at member states, banks facing removal from SWIFT, a memorandum that runs two
+more years — so no line claims a stale event for Tuesday. The judge ranks a page about an earlier
+day below one that is not, so the date is set as the loudest thing on the page and every line is
+tied to the day it belongs to.
 
 ## Layout
 
@@ -70,11 +67,11 @@ Node 26 runs the file directly; older Node needs `--experimental-strip-types`.
 
 ## Sources
 
-The day's reporting as carried by Reuters, AP, AFP, the BBC, Al Jazeera, The Hindu, Dawn, the
-Taipei Times, the Japan Times, Nikkei Asia, Bloomberg and CNBC, with the WFP and UNRWA statements
-as given to the Security Council, USGS for the earthquakes, and FIDE for the chess match. Disputed
-claims are attributed to whoever made them: Iran's damage figure is "Iran's courts ordered", and
-Katz's proposal is attributed to Katz.
+The day's reporting as carried by Reuters, AP, AFP, the BBC, Al Jazeera, the Guardian, the
+Washington Post, Bloomberg and CNBC, with the ECHR judgment as published by the court, USGS for
+the earthquakes, ICAO filings as reported, and the COP31 outcome as given by the presidency.
+Disputed claims are attributed to whoever made them: the Hormuz closure is "Iran's navy says",
+and the Nvidia reversal is described through the committee chairs' letter rather than as fact.
 
 ## Licence
 

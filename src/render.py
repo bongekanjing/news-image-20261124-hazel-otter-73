@@ -70,133 +70,125 @@ def F(kind: str, size: int):
 # --- the day's stories -----------------------------------------------------
 TILES = [
     {
-        "region": "Americas", "place": "Santa Clara", "topic": "Markets",
-        "headline": "Nvidia takes its ousted chief back",
-        "deck": "Huang returns 11 days after resigning over an affair with a woman US "
-                "intelligence suspects of spying for China. Nasdaq jumps 7%.",
-        "art": "ceo",
-    },
-    {
-        "region": "Americas", "place": "New York", "topic": "Law",
-        "headline": "A court reopens Trump's immunity path",
-        "deck": "The 2nd Circuit revived his bid to move the hush-money case out of "
-                "New York state court, where an immunity claim can be heard.",
-        "art": "courthouse",
-    },
-    {
-        "region": "MidEast", "place": "Tehran", "topic": "Conflict",
-        "headline": "Iran calls the blockade an act of war",
-        "deck": "Tehran's courts ordered Washington to pay $290bn, and it said Hormuz "
-                "could reopen in two days if the blockade is lifted.",
+        "region": "MidEast", "place": "Tehran / Hormuz", "topic": "Blockade",
+        "headline": "Iran orders Hormuz shut further",
+        "deck": "Hatami said the strait must close \"further day by day\" until seven "
+                "conditions are met. The IRGC says mines hit three tankers; the JMIC cannot confirm it.",
         "art": "hormuz",
     },
     {
-        "region": "Africa", "place": "Benghazi", "topic": "War",
-        "headline": "Ukrainian drones sink a Russian warship in Libya",
-        "deck": "Seven naval drones hit the corvette Merkury at Haftar's Benghazi base, "
-                "carrying the war outside Europe.",
-        "art": "corvette",
+        "region": "Americas", "place": "Washington", "topic": "Nvidia",
+        "headline": "Republicans turn on Huang's return",
+        "deck": "Three House committee chairs said Nvidia's review left security concerns "
+                "open. Huang testifies to the Senate Banking Committee on 3 December.",
+        "art": "ceo",
     },
     {
-        "region": "Europe", "place": "Warsaw", "topic": "NATO",
-        "headline": "A Russian drone crosses into Poland",
-        "deck": "Poland cleared it to be shot down and held fire. Three Russian "
-                "missiles landed on Polish soil on Friday; NATO sends AWACS.",
-        "art": "radar",
+        "region": "Europe", "place": "Strasbourg", "topic": "Rights",
+        "headline": "Court rules against Poland and Latvia",
+        "deck": "The ECHR found pushbacks of Afghan and Iraqi migrants into Belarus "
+                "amounted to inhuman treatment. It is the first ruling on instrumentalised migration.",
+        "art": "courthouse",
     },
     {
-        "region": "World", "place": "Rome", "topic": "Aid",
-        "headline": "7.3 million more people lose their food aid",
-        "deck": "The WFP says war at Hormuz, Bab el-Mandeb and the Black Sea will add "
-                "$727m to its costs by mid-2027.",
-        "art": "aid",
-    },
-    {
-        "region": "MidEast", "place": "Jabalia", "topic": "War",
-        "headline": "A UN water worker is killed at his well",
-        "deck": "Adel Al-Helo, 35 years with UNRWA, died in a strike on the camp. "
-                "1,600 Palestinians have been killed since the ceasefire.",
+        "region": "MidEast", "place": "Gaza City", "topic": "War",
+        "headline": "Hamas security chief killed by strike",
+        "deck": "An Israeli airstrike killed Naeem Abu Nahel, director of Hamas' internal "
+                "security apparatus in Gaza, on Tuesday, Hamas sources said.",
         "art": "well",
     },
     {
-        "region": "World", "place": "Geneva", "topic": "Sport",
-        "headline": "The youngest world chess final ever",
-        "deck": "Gukesh and Sindarov, both 20, open a three-week match for the title "
-                "at the Fondation Martin Bodmer.",
+        "region": "Europe", "place": "Geneva", "topic": "Sport",
+        "headline": "The youngest world title match begins",
+        "deck": "Gukesh and Sindarov, both 20, opened the FIDE World Championship at "
+                "Cologny. Sindarov had white and chose the Berlin Defence.",
         "art": "chess",
     },
     {
-        "region": "Asia", "place": "New Delhi", "topic": "Privacy",
-        "headline": "Three years of voters' data left exposed",
-        "deck": "Form 6 applications were readable on the Election Commission's "
-                "citizen portal by anyone with a login.",
-        "art": "data",
+        "region": "Africa", "place": "Addis Ababa", "topic": "Health",
+        "headline": "Gavi moves to buy 1.5m Ebola doses",
+        "deck": "The alliance will buy Oxford and Serum Institute shots against the "
+                "Bundibugyo strain, which has killed more than 5,700 people in Congo.",
+        "art": "aid",
     },
     {
-        "region": "Europe", "place": "Antalya", "topic": "Climate",
-        "headline": "COP31 ends with nothing agreed",
-        "deck": "The summit closed without a single agreed outcome. Albanese defends "
-                "sending Bowen to co-host a collapse.",
+        "region": "Europe", "place": "Brussels", "topic": "Climate",
+        "headline": "Brussels moves to remake the COP",
+        "deck": "After COP31 closed with no deal, the Commission wants the summit "
+                "process overhauled: \"If we want to save the COP, it needs to reform itself.\"",
         "art": "cop",
     },
     {
-        "region": "World", "place": "Port Vila", "topic": "Disaster",
-        "headline": "A 6.5 quake runs deep under Vanuatu",
-        "deck": "The M6.5 struck at 598km depth with a green impact alert; three "
-                "more quakes of 5 or more followed across the Pacific.",
+        "region": "Asia", "place": "Taipei", "topic": "Airspace",
+        "headline": "Washington takes two states to the ICAO",
+        "deck": "The US asked the aviation agency to examine Mauritius and Seychelles for "
+                "barring President Lai's aircraft from their airspace on a trip to Eswatini.",
+        "art": "radar",
+    },
+    {
+        "region": "Asia", "place": "Kyushu", "topic": "Disaster",
+        "headline": "A 5.8 quake strikes near southern Japan",
+        "deck": "The quake came a day after an M7 off Kamchatka, where a false M9.9 "
+                "alert was issued and then withdrawn.",
         "art": "seismo",
+    },
+    {
+        "region": "Americas", "place": "Tel Aviv", "topic": "Aid",
+        "headline": "Huckabee doubts the Israel aid will stop",
+        "deck": "Shown on Tuesday, the US ambassador said the $3.8bn a year memorandum "
+                "\"is supposed to continue for two more years\", casting doubt on Trump's pledge.",
+        "art": "data",
+    },
+    {
+        "region": "Africa", "place": "Tripoli", "topic": "Oil",
+        "headline": "Libya's government moves to void Arkenu",
+        "deck": "The GNU asked a Tripoli court to annul the oil deal that a UN panel said "
+                "moved more than $3bn out of the country.",
+        "art": "corvette",
     },
 ]
 
 BRIEFS = [
-    ("Europe", "Berlin", "Denmark expels a Russian diplomat over a murder plot"),
-    ("Europe", "Kyiv", "Zelenskiy: intelligence shows new Russian strike plans"),
-    ("Europe", "Brussels", "NATO flies AWACS aircraft to Poland"),
-    ("Europe", "Rome", "A student dies on hunger strike over housing"),
-    ("Europe", "London", "Critically ill Gazan children reach the NHS"),
-    ("Europe", "The Hague", "Minister: the rule of law, not rule of power"),
-    ("Europe", "Paris", "France weighs the Cyprus aid corridor"),
-    ("Asia", "Dhaka", "BNP factions clash in Jhenaidah; fifteen hurt"),
-    ("Asia", "Gopalganj", "Awami League factions fight; four crude bombs"),
-    ("Asia", "Mumbai", "Sensex closes 1.8% lower at 82,436"),
-    ("Asia", "Tokyo", "Markets shut for the Labour Thanksgiving holiday"),
-    ("Asia", "New Delhi", "Court flags connivance in illegal building"),
-    ("Asia", "Lucknow", "Enumerators pushed to rescue the census count"),
-    ("Asia", "Kolkata", "West Bengal moves a bill on cow slaughter"),
-    ("Asia", "Beijing", "Offshore yuan firms to 6.67 per dollar"),
-    ("Asia", "Lahore", "Seven die as a stone truck overturns in Punjab"),
-    ("MidEast", "Gaza City", "A strike on a car in the west kills two"),
-    ("MidEast", "Doha", "Qatar warns the blockade is an escalation"),
-    ("MidEast", "Jerusalem", "Katz: police, not troops, should police settlers"),
-    ("MidEast", "Manama", "A US radar is hit in the Gulf, Iran says"),
-    ("Africa", "Nairobi", "WFP: El Nino deepens the shipping squeeze"),
-    ("Africa", "Khartoum", "Aid convoys resume on the Blue Nile road"),
-    ("Americas", "Washington", "Bessent: the Fed risks overtightening"),
-    ("Americas", "New York", "Wall Street's sharpest day since spring"),
+    ("Americas", "Washington", "Advocacy groups sue over a removed slavery exhibit"),
+    ("Europe", "Brussels", "The Commission wants the COP process reformed"),
+    ("Europe", "Brussels", "A 50m euro Black Sea maritime security hub is planned"),
+    ("Europe", "Antalya", "Eighty to ninety states objected to the COP31 text"),
+    ("Europe", "Brussels", "Sixty Russian banks face removal from SWIFT"),
+    ("MidEast", "Hormuz", "Three tankers burned after reported mine hits"),
+    ("MidEast", "Tehran", "Hatami: any new US action draws a wider answer"),
+    ("MidEast", "Tel Aviv", "Huckabee spoke at the INSS conference"),
+    ("Asia", "Port Louis", "Mauritius withdrew the flight permissions in April"),
+    ("Asia", "Taipei", "Lai's flight was barred from two airspaces"),
+    ("Asia", "Seoul", "Korea and China widen a trade deal on content"),
+    ("Asia", "Dhaka", "Talks drag on over the new RMG wage"),
+    ("Africa", "Congo", "No licensed shot exists for the Bundibugyo strain"),
+    ("Africa", "Accra", "West Africa's gold refining outruns its mines"),
+    ("Africa", "Conakry", "Miners stockpile gold as local rules bite"),
+    ("World", "Geneva", "Sindarov won the World Cup and the Candidates"),
+    ("World", "Cologny", "Fourteen games; the first to 7.5 wins"),
+    ("World", "Kamchatka", "A false M9.9 alert followed an M7 quake"),
     ("World", "Zurich", "FIFA names the 2031 and 2035 World Cup hosts"),
-    ("World", "Port Vila", "A 5.5 and a 5.4 quake follow the M6.5"),
-    ("World", "Sydney", "Chalmers sees unemployment past 5% next year"),
-    ("World", "Geneva", "Both players are 20; the match runs three weeks"),
+    ("World", "Addis Ababa", "Africa CDC hosts the vaccine financing talks"),
 ]
 
 NUMBERS = [
-    ("$290bn", "Damages Iran's courts ordered from the US"),
-    ("+31%", "Nvidia's jump as Huang returned"),
-    ("$89.99", "Brent crude, down 2.8% on the day"),
-    ("7.3m", "More people at risk of losing food aid"),
-    ("598km", "Depth of the Vanuatu earthquake"),
-    ("$727m", "Extra WFP shipping cost by mid-2027"),
+    ("7", "Conditions Tehran says must be met first"),
+    ("$3.8bn", "Annual US military aid to Israel"),
+    ("1.5m", "Ebola doses Gavi plans to buy"),
+    ("5,700", "Deaths in Congo's Bundibugyo outbreak"),
+    ("90", "States that objected to the COP31 text"),
+    ("20", "Both players' age in the title match"),
 ]
 
 DATE_CHECK = [
-    "Huang resigns over the affair, 13 Nov",
-    "Three Russian missiles land in Poland, 20 Nov",
-    "Hamas ceasefire holds since October 2025",
-    "COP31 opens in Antalya earlier in November",
+    "COP31 closed without a deal, 22 Nov",
+    "Huang reinstated at Nvidia, 23 Nov",
+    "Iran ordered the strait shut, 23 Nov",
+    "The Merkury was hit at Benghazi, 23 Nov",
 ]
 BILLBOARD = (
-    "Nvidia takes back its chief  ·  Iran defies a US blockade  ·  "
-    "Ukraine sinks a Russian ship in Libya  ·  COP31 collapses"
+    "Iran shuts Hormuz further  ·  Republicans break with Trump on Nvidia  ·  "
+    "Court condemns Poland and Latvia  ·  Hamas security chief killed"
 )
 
 
