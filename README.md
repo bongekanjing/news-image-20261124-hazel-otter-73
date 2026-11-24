@@ -1,8 +1,10 @@
 # 24 November 2026 — one page of the day's news
 
-[![news-image-20261124](https://make.fun/badge/news-image-20261124.svg)](https://make.fun/c/news-image-20261124)
+[![make.fun · news-image-20261124](https://make.fun/badge/news-image-20261124.svg)](https://make.fun/bounty/news-image-20261124?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261124)
+[![rank](https://make.fun/badge/news-image-20261124/bongekanjing/news-image-20261124-hazel-otter-73/rank.svg)](https://make.fun/bounty/news-image-20261124/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261124)
+[![reward](https://make.fun/badge/news-image-20261124/bongekanjing/news-image-20261124-hazel-otter-73/reward.svg)](https://make.fun/bounty/news-image-20261124?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261124)
 
-Entry for [Sum up 24 November's world news in one image](https://make.fun/c/news-image-20261124).
+Entry for [Sum up 24 November's world news in one image](https://make.fun/bounty/news-image-20261124).
 
 A single 1024x1024 broadsheet front page for Tuesday 24 November 2026: the date set as the
 headline, three wide illustrated leads, two rows of smaller illustrated tiles, a world map that
