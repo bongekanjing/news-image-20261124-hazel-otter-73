@@ -16,6 +16,9 @@ import { fileURLToPath } from 'node:url';
 const OUT_NAME = 'entry.png';
 const CAP_BYTES = 1048576;
 const CAP_SIDE = 1024;
+// The rules name the file entry.png whatever the format, so the name is stated
+// once here and every path below is built from it.
+const SOURCE_NAME = 'entry.png';
 
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 const here = dirname(fileURLToPath(import.meta.url));
@@ -24,7 +27,7 @@ const target = join(outDir, OUT_NAME);
 // The image is the entry, so check it is still a whole PNG of the size the
 // rules ask for before it goes out: the 1 MiB cap, the signature, and the
 // width and height in the IHDR chunk that follows it.
-const bytes = readFileSync(join(here, 'entry.png'));
+const bytes = readFileSync(join(here, SOURCE_NAME));
 const PNG_SIGNATURE = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
 if (bytes.length > CAP_BYTES) {
   throw new Error(`entry.png is ${bytes.length} bytes, over the 1 MiB cap`);
