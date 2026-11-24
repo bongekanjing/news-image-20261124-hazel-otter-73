@@ -38,7 +38,7 @@ PLUM = (104, 58, 116)
 GREEN = (38, 96, 62)
 
 FONT_DIR = os.environ.get(
-    "NI24_FONT_DIR", os.path.join(os.path.dirname(__file__), "fonts")
+    "NI24_FONT_DIR", "/root/.hermes/cache/scratch/ni24fonts"
 )
 FONTS = {
     "serif": "DejaVuSerif.ttf",

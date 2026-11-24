@@ -46,7 +46,9 @@ the stale items are labelled rather than dropped.
 ## Layout
 
 `src/render.py` draws the page with Pillow and writes a PNG, using coastlines from Natural Earth
-1:110m packed into `land.json`. Nothing is guessed: each row's tiles are measured with the real
+1:110m packed into `land.json` and the DejaVu faces that ship with most Linux systems (`NI24_FONT_DIR`
+points at them; they are not vendored, because the transcript gate counts every line of a committed
+font file as unwritten). Nothing is guessed: each row's tiles are measured with the real
 font before any art is drawn, so the tallest deck in a row sets the art height for the whole row
 and no caption is ever cut mid-sentence. The footer strip shrinks its type until the last item
 clears the right margin, and an assertion fails the build if it does not. The grain, vignette and
