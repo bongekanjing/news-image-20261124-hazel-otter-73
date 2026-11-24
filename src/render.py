@@ -20,6 +20,8 @@ import sys
 
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFont, ImageStat
 
+from fit import Measure
+
 W = H = 1024
 MARGIN = 24
 BOTTOM = 1000
@@ -198,40 +200,17 @@ BILLBOARD = (
 )
 
 
-# --- text helpers ----------------------------------------------------------
-def wrap(draw, text, font, width):
-    words = text.split()
-    lines, cur = [], ""
-    for word in words:
-        trial = word if not cur else cur + " " + word
-        if draw.textlength(trial, font=font) <= width:
-            cur = trial
-        else:
-            if cur:
-                lines.append(cur)
-            cur = word
-    if cur:
-        lines.append(cur)
-    return lines
+# --- text measurement ------------------------------------------------------
+# Wrapped and fitted type lives in src/fit.py: the page asks that module how
+# many lines a deck needs and then chooses the art height from the answer.
+MEASURE = None
 
 
-def draw_block(draw, xy, text, font, width, fill, leading, max_lines=None):
-    lines = wrap(draw, text, font, width)
-    if max_lines is not None:
-        lines = lines[:max_lines]
-    x, y = xy
-    for line in lines:
-        draw.text((x, y), line, font=font, fill=fill)
-        y += leading
-    return y
-
-
-def fit_one_line(draw, text, kind, size, width):
-    font = F(kind, size)
-    while draw.textlength(text, font=font) > width and size > 6:
-        size -= 1
-        font = F(kind, size)
-    return font
+def setup_measure(draw):
+    """Build the page's one Measure around the live draw handle."""
+    global MEASURE
+    MEASURE = Measure(draw, F)
+    return MEASURE
 
 
 def _sky(draw, box, top, bottom=None):
@@ -921,6 +900,7 @@ PINS = [
 def build(out_path: str) -> None:
     img = Image.new("RGB", (W, H), PAPER)
     d = ImageDraw.Draw(img)
+    measure = setup_measure(d)
     inner = W - 2 * MARGIN
 
     # ---- eyebrow: the nameplate and the promise ----
@@ -943,7 +923,7 @@ def build(out_path: str) -> None:
     y += 6
 
     # ---- the billboard: the four things that happened ----
-    bf = fit_one_line(d, BILLBOARD, "sans_cb", 13, inner)
+    bf = measure.one_line(BILLBOARD, "sans_cb", 13, inner)
     d.text((MARGIN, y), BILLBOARD, font=bf, fill=RED)
     y += 20
 
@@ -956,7 +936,7 @@ def build(out_path: str) -> None:
     for i, (big, small) in enumerate(NUMBERS):
         cx = MARGIN + i * cell + 8
         d.text((cx, y + 4), big, font=nf, fill=RED)
-        draw_block(d, (cx, y + 27), small, lf, cell - 14, INK_SOFT, 9, 2)
+        measure.block(cx, y + 27, small, lf, cell - 14, INK_SOFT, 9, limit=2)
         if i:
             d.line((MARGIN + i * cell, y + 6, MARGIN + i * cell, y + strip_h - 6), fill=RULE)
     y += strip_h + 10
@@ -987,8 +967,8 @@ def build(out_path: str) -> None:
         blocks = []
         for c in range(cols):
             tile = TILES[row[c]]
-            head = wrap(d, tile["headline"], head_f, tw - 2)
-            deck = wrap(d, tile["deck"], deck_f, tw - 2)
+            head = measure.lines(tile["headline"], head_f, tw - 2)
+            deck = measure.lines(tile["deck"], deck_f, tw - 2)
             assert len(head) <= 2, (tile["headline"], len(head))
             blocks.append((head, deck))
         deck_lines = max(len(dk) for _, dk in blocks)
@@ -1015,7 +995,7 @@ def build(out_path: str) -> None:
             d.text((x0 + 7 - nw / 2, ty + 1), str(idx), font=numf, fill=PAPER)
 
             kick = f"{tile['place'].upper()}  ·  {tile['topic'].upper()}"
-            kf = fit_one_line(d, kick, "sans_cb", 8, tw - 22)
+            kf = measure.one_line(kick, "sans_cb", 8, tw - 22)
             d.text((x0 + 19, ty + 1), kick, font=kf, fill=REGION_COLOUR[tile["region"]])
             ty += kick_h + 2
 
@@ -1056,7 +1036,7 @@ def build(out_path: str) -> None:
             gut = 9
             colw = (bw - gut * (ncol - 1)) // ncol
             per_col = (rail_top + rail_h - by) // lead
-            wrapped = [(region, wrap(d, f"{city.upper()}  {text}", bfont, colw))
+            wrapped = [(region, measure.lines(f"{city.upper()}  {text}", bfont, colw))
                        for region, city, text in BRIEFS]
             total = sum(len(ls) for _, ls in wrapped)
             if total <= per_col * ncol:
